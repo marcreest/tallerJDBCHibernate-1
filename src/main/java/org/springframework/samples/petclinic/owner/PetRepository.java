@@ -17,6 +17,7 @@ package org.springframework.samples.petclinic.owner;
 
 import java.util.List;
 
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -30,7 +31,7 @@ import org.springframework.transaction.annotation.Transactional;
  * @author Sam Brannen
  * @author Michael Isvy
  */
-public interface PetRepository extends Repository<Pet, Integer> {
+public interface PetRepository extends JpaRepository<Pet, Integer> {
 
     /**
      * Retrieve all {@link PetType}s from the data store.
@@ -52,7 +53,7 @@ public interface PetRepository extends Repository<Pet, Integer> {
      * Save a {@link Pet} to the data store, either inserting or updating it.
      * @param pet the {@link Pet} to save
      */
-    void save(Pet pet);
+    Pet save(Pet pet);
 
 }
 

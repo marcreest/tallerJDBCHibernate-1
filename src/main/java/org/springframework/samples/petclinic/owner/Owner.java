@@ -58,11 +58,20 @@ public class Owner extends Person {
     @Digits(fraction = 0, integer = 10)
     private String telephone;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "owner")
+    @OneToMany( cascade = CascadeType.ALL, mappedBy = "owner" )
     private Set<Pet> pets;
 
+//    @OneToMany( cascade = CascadeType.ALL, mappedBy = "user" )
+//    private Set<UserAccount> userAccounts;
+    
+	/**
+	 * @param pets the pets to set
+	 */
+	public void setPets(Set<Pet> pets) {
+		this.pets = pets;
+	}
 
-    public String getAddress() {
+	public String getAddress() {
         return this.address;
     }
 

@@ -61,7 +61,7 @@ public class Pet extends NamedEntity {
     private PetType type;
 
     @ManyToOne
-    @JoinColumn(name = "owner_id")
+    @JoinColumn(name = "owner")
     private Owner owner;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy="petId", fetch = FetchType.EAGER)
